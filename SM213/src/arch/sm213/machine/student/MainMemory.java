@@ -27,8 +27,9 @@ public class MainMemory extends AbstractMainMemory {
    * @return true iff address is aligned to length.
    */
   @Override protected boolean isAccessAligned (int address, int length) {
-    // TODO
-    return false;
+    //address divisible by length?
+    //return false;
+    return (address % length == 0);
   }
   
   /**
@@ -41,16 +42,21 @@ public class MainMemory extends AbstractMainMemory {
    */
   @Override public int bytesToInteger (byte byteAtAddrPlus0, byte byteAtAddrPlus1, byte byteAtAddrPlus2, byte byteAtAddrPlus3) {
     // TODO
+    //literally just copy + paste what I did from bigEndianValue
+    //incl. masking
     return 0;
   }
   
   /**
    * Convert a Big Endian integer into an array of 4 bytes organized by memory address.
-   * @param  i an Big Endian integer.
+   * @param  i a Big Endian integer.
    * @return an array of byte where [0] is value of low-address byte of the number etc.
    */
   @Override public byte[] integerToBytes (int i) {
     // TODO
+    //if I shift an int to the right, and I want to get e.g. the 2nd byte, I'll have to figure out how to
+    //remove the leading 2 bytes
+    //
     return null;
   }
   
